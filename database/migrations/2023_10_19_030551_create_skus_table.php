@@ -13,9 +13,16 @@ return new class extends Migration
     {
         Schema::create('skus', function (Blueprint $table) {
             $table->id();
+
+            $table->bigInteger('product_id')->unsigned();#codigo añadido
+
             $table->string('unit_average');
             $table->bigInteger('quantity');
             $table->timestamps();
+
+            $table->foreign('product_id')->references('id')->on('products')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

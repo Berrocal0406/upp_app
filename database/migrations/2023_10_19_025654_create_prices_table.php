@@ -13,9 +13,16 @@ return new class extends Migration
     {
         Schema::create('prices', function (Blueprint $table) {
             $table->id();
-            $table->float('purchase-price');
-            $table->float('sale-price');
+
+            $table->bigInteger('product_id')->unsigned();#codigo añadido
+
+            $table->float('purchase_price');
+            $table->float('sale_price');
             $table->timestamps();
+
+            $table->foreign('product_id')->references('id')->on('products')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
