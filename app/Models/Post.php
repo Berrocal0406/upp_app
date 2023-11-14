@@ -36,7 +36,7 @@ class Post extends Model
     public function image()
     {
         //Un post tiene una imagen
-        return $this->morphOne(Image::class, 'imageable');
+        return $this->morphMany(Image::class, 'imageable');
     }
 
     public function tags()

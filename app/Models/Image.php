@@ -15,10 +15,10 @@ class Image extends Model
         return $this->morphTo();
         //morphTo significa "transformado a"
     }
+    
 
     public function user():BelongsTo
     {
-        //Un comentario pertenece a un usuario
         return $this->belongsTo(User::class);
     }
 }
