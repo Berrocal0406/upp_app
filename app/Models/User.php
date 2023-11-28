@@ -49,7 +49,7 @@ class User extends Authenticatable
 
     public function phone()
     {
-        return $this->morphTo(Phone::class,'phoneable');
+        return $this->morphOne(Phone::class,'phoneable');
     }
 
     public function phoneable()

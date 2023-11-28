@@ -19,7 +19,6 @@ class PhoneFactory extends Factory
         return [
             'phone_number' => $this->faker->phoneNumber,
             //'phoneable_type' => $this->faker->text,
-            'phoneable_id' => $this->faker->numberBetween(1,50)
         ];
     }
 }

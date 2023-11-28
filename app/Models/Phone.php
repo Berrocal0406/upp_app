@@ -14,4 +14,16 @@ class Phone extends Model
         "phone_number"
     ];
 
+    public function phoneable():Morphto
+    {
+        //Un telefono pertenece a una entidad polimórfica
+        return $this->morphTo();
+        //morphTo significa "transformado a"
+    }
+
+    public function user():BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }
